@@ -18,12 +18,13 @@ func _input(event):
 
 func act() -> void:
 
-	interactibles.sort_custom(target_sorting)
-
-	for i in interactibles:
-		print(i)	
+	if interactibles.size() > 0:
+		interactibles.sort_custom(target_sorting)
+		interactibles[0].act()
 
 func add(a : Node2D) -> void:
-	interactibles.append(a)
+	if a is Interactable:
+		interactibles.append(a)
 func remove(a : Node2D) -> void:
-	interactibles.erase(a)
+	if a is Interactable:
+		interactibles.erase(a)

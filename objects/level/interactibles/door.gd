@@ -4,7 +4,7 @@ class_name Door
 signal entered
 
 func act() -> void:
-	print("acted")
+	enter()
 
 func enter() -> void:
 	print("Entered")
