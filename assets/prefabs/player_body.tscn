@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbsalkvq1wpwn"]
+
+[ext_resource type="Script" uid="uid://swf736h1hfde" path="res://objects/player/on_level/movement_script.gd" id="1_fnlev"]
+[ext_resource type="Texture2D" uid="uid://k3sbmfu6t1gh" path="res://raw_assets/sprites/character.png" id="2_u4oe1"]
+[ext_resource type="Script" uid="uid://dylpiwcij6l4q" path="res://objects/player/on_level/interactor.gd" id="3_b0jcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qr1p"]
+radius = 49.0408
+
+[node name="PlayerBody" type="CharacterBody2D"]
+script = ExtResource("1_fnlev")
+metadata/_custom_type_script = "uid://swf736h1hfde"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u4oe1")
+
+[node name="Interactor" type="Area2D" parent="."]
+script = ExtResource("3_b0jcj")
+metadata/_custom_type_script = "uid://dylpiwcij6l4q"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
+shape = SubResource("CircleShape2D_7qr1p")

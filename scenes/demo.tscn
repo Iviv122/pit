@@ -1,37 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://xnjj1ma0huyk"]
+[gd_scene load_steps=6 format=4 uid="uid://xnjj1ma0huyk"]
 
-[ext_resource type="Script" uid="uid://swf736h1hfde" path="res://objects/player/on_level/movement_script.gd" id="1_ba4lm"]
-[ext_resource type="Texture2D" uid="uid://jicl3mf6nqka" path="res://raw_assets/sprites/tile.png" id="1_l20p6"]
-[ext_resource type="Texture2D" uid="uid://k3sbmfu6t1gh" path="res://raw_assets/sprites/character.png" id="1_tqfh0"]
-[ext_resource type="Texture2D" uid="uid://bds5y6vdylim2" path="res://raw_assets/sprites/two_way_platform.png" id="2_vephn"]
+[ext_resource type="TileSet" uid="uid://byc7gm6ydy4fx" path="res://assets/tileset/basic_tileset.tres" id="1_x0xbu"]
+[ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="2_vephn"]
 [ext_resource type="Texture2D" uid="uid://daywbmn0ltoyp" path="res://raw_assets/sprites/door.png" id="5_b0nem"]
-[ext_resource type="Script" uid="uid://dylpiwcij6l4q" path="res://objects/player/on_level/interactor.gd" id="5_x0xbu"]
 [ext_resource type="Script" uid="uid://cjh72gr2td3j0" path="res://objects/level/interactibles/door.gd" id="6_7qr1p"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l20p6"]
-texture = ExtResource("1_l20p6")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0nem"]
-texture = ExtResource("2_vephn")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:0/0/physics_layer_0/polygon_0/one_way = true
-
-[sub_resource type="TileSet" id="TileSet_b0nem"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_l20p6")
-sources/2 = SubResource("TileSetAtlasSource_b0nem")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(32, 32)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7qr1p"]
-radius = 49.0408
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0xbu"]
 size = Vector2(64, 128)
@@ -40,25 +12,9 @@ size = Vector2(64, 128)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD7/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD6/wIAAQAAAAAAAAD6/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD4/wEAAQAAAAAAAAD4/wIAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAD4/wMAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAAAP//AgAAAAAAAAABAP//AgAAAAAAAAACAP//AgAAAAAAAAADAP//AgAAAAAAAAAKAAMAAQAAAAAAAAAKAAIAAQAAAAAAAAAKAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAANAAEAAQAAAAAAAAANAAIAAQAAAAAAAAANAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAEAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAEAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_b0nem")
+tile_set = ExtResource("1_x0xbu")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, 69)
-script = ExtResource("1_ba4lm")
-metadata/_custom_type_script = "uid://swf736h1hfde"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_0xm2m")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_tqfh0")
-
-[node name="Interactor" type="Area2D" parent="CharacterBody2D"]
-script = ExtResource("5_x0xbu")
-metadata/_custom_type_script = "uid://dylpiwcij6l4q"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interactor"]
-shape = SubResource("CircleShape2D_7qr1p")
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_vephn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
