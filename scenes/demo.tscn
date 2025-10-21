@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://xnjj1ma0huyk"]
+[gd_scene load_steps=14 format=4 uid="uid://xnjj1ma0huyk"]
 
 [ext_resource type="Script" uid="uid://swf736h1hfde" path="res://objects/player/on_level/movement_script.gd" id="1_ba4lm"]
 [ext_resource type="Texture2D" uid="uid://jicl3mf6nqka" path="res://raw_assets/sprites/tile.png" id="1_l20p6"]
 [ext_resource type="Texture2D" uid="uid://k3sbmfu6t1gh" path="res://raw_assets/sprites/character.png" id="1_tqfh0"]
 [ext_resource type="Texture2D" uid="uid://bds5y6vdylim2" path="res://raw_assets/sprites/two_way_platform.png" id="2_vephn"]
+[ext_resource type="Texture2D" uid="uid://daywbmn0ltoyp" path="res://raw_assets/sprites/door.png" id="5_b0nem"]
+[ext_resource type="Script" uid="uid://dylpiwcij6l4q" path="res://objects/player/on_level/interactor.gd" id="5_x0xbu"]
+[ext_resource type="Script" uid="uid://cjh72gr2td3j0" path="res://objects/level/interactibles/door.gd" id="6_7qr1p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l20p6"]
 texture = ExtResource("1_l20p6")
@@ -27,6 +30,12 @@ sources/2 = SubResource("TileSetAtlasSource_b0nem")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qr1p"]
+radius = 49.0408
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0xbu"]
+size = Vector2(64, 128)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -34,7 +43,7 @@ tile_map_data = PackedByteArray("AAD7/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wMAAQAAAAA
 tile_set = SubResource("TileSet_b0nem")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, 71)
+position = Vector2(0, 69)
 script = ExtResource("1_ba4lm")
 metadata/_custom_type_script = "uid://swf736h1hfde"
 
@@ -44,4 +53,35 @@ shape = SubResource("RectangleShape2D_0xm2m")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_tqfh0")
 
+[node name="Interactor" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("5_x0xbu")
+metadata/_custom_type_script = "uid://dylpiwcij6l4q"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interactor"]
+shape = SubResource("CircleShape2D_7qr1p")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Door2" type="Area2D" parent="."]
+position = Vector2(356, -32)
+script = ExtResource("6_7qr1p")
+metadata/_custom_type_script = "uid://cjh72gr2td3j0"
+
+[node name="Door" type="Sprite2D" parent="Door2"]
+z_index = -1
+texture = ExtResource("5_b0nem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+shape = SubResource("RectangleShape2D_x0xbu")
+
+[node name="Door1" type="Area2D" parent="."]
+position = Vector2(256, -33)
+script = ExtResource("6_7qr1p")
+metadata/_custom_type_script = "uid://cjh72gr2td3j0"
+
+[node name="Door" type="Sprite2D" parent="Door1"]
+z_index = -1
+texture = ExtResource("5_b0nem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
+shape = SubResource("RectangleShape2D_x0xbu")
