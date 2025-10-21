@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dd42gyp450no7"]
+
+[node name="BasicMove" type="Node2D"]
