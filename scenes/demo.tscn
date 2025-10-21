@@ -34,7 +34,7 @@ tile_map_data = PackedByteArray("AAD7/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wMAAQAAAAA
 tile_set = SubResource("TileSet_b0nem")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, 80)
+position = Vector2(0, 71)
 script = ExtResource("1_ba4lm")
 metadata/_custom_type_script = "uid://swf736h1hfde"
 
