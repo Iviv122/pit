@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbsalkvq1wpwn"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsalkvq1wpwn"]
 
 [ext_resource type="Script" uid="uid://swf736h1hfde" path="res://objects/player/on_level/movement_script.gd" id="1_fnlev"]
 [ext_resource type="Texture2D" uid="uid://k3sbmfu6t1gh" path="res://raw_assets/sprites/character.png" id="2_u4oe1"]
 [ext_resource type="Script" uid="uid://dylpiwcij6l4q" path="res://objects/player/on_level/interactor.gd" id="3_b0jcj"]
+[ext_resource type="Script" uid="uid://dbx6xi5n8dmcd" path="res://objects/player/on_level/player_shooter.gd" id="4_bk0et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(32, 32)
@@ -26,3 +27,7 @@ metadata/_custom_type_script = "uid://dylpiwcij6l4q"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
 shape = SubResource("CircleShape2D_7qr1p")
+
+[node name="PlayerShooter" type="Node2D" parent="."]
+script = ExtResource("4_bk0et")
+metadata/_custom_type_script = "uid://dbx6xi5n8dmcd"

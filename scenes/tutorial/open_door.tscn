@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="1_ars0g"]
 [ext_resource type="TileSet" uid="uid://byc7gm6ydy4fx" path="res://assets/tileset/basic_tileset.tres" id="2_rcwpf"]
 [ext_resource type="Script" uid="uid://cj1q7fjqv02ba" path="res://objects/level/auto_translator.gd" id="3_xrb4y"]
-[ext_resource type="PackedScene" uid="uid://gkvna87eg30r" path="res://assets/prefabs/active_button.tscn" id="4_rcwpf"]
-[ext_resource type="PackedScene" uid="uid://dh42aakwa0w8s" path="res://assets/prefabs/drop_door.tscn" id="5_xrb4y"]
+[ext_resource type="PackedScene" uid="uid://gkvna87eg30r" path="res://assets/prefabs/level_parts/active_button.tscn" id="4_rcwpf"]
+[ext_resource type="PackedScene" uid="uid://dh42aakwa0w8s" path="res://assets/prefabs/level_parts/drop_door.tscn" id="5_xrb4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvpit"]
 size = Vector2(354, 242)
