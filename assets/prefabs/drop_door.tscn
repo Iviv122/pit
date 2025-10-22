@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh42aakwa0w8s"]
+
+[ext_resource type="Script" uid="uid://c5bb4roaiw68a" path="res://objects/level/activateable/drop_door.gd" id="1_nlw8v"]
+[ext_resource type="Texture2D" uid="uid://ck24w456csm1q" path="res://raw_assets/sprites/drop_door.png" id="2_kwj4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwj4d"]
+size = Vector2(32, 128)
+
+[node name="DropDoor" type="Node2D"]
+script = ExtResource("1_nlw8v")
+metadata/_custom_type_script = "uid://c5bb4roaiw68a"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_kwj4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kwj4d")

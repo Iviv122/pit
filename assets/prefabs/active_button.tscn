@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://gkvna87eg30r"]
+
+[ext_resource type="Script" uid="uid://csqqc0fax0gog" path="res://objects/level/interactibles/lever.gd" id="1_ic5fi"]
+[ext_resource type="Texture2D" uid="uid://cdmbr6b3ekov8" path="res://raw_assets/sprites/lever.png" id="2_wldyw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wldyw"]
+radius = 43.0
+
+[node name="ActiveButton" type="Area2D"]
+script = ExtResource("1_ic5fi")
+metadata/_custom_type_script = "uid://csqqc0fax0gog"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wldyw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wldyw")
