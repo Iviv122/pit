@@ -1,5 +1,5 @@
 extends Resource 
 class_name Weapon
 
-func shoot() -> void:
+func shoot(_player : CharacterMovement) -> void:
     pass

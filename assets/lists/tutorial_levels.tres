@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="TutorialLevelList" load_steps=6 format=3 uid="uid://djue2cblnaboa"]
+[gd_resource type="Resource" script_class="TutorialLevelList" load_steps=7 format=3 uid="uid://djue2cblnaboa"]
 
 [ext_resource type="PackedScene" uid="uid://dd42gyp450no7" path="res://scenes/tutorial/basic_move.tscn" id="1_aej5r"]
 [ext_resource type="Script" uid="uid://cptgslr1mdx82" path="res://objects/lists/tutorial_level_list.gd" id="1_cdi3s"]
 [ext_resource type="PackedScene" uid="uid://djir8272cxfa1" path="res://scenes/tutorial/drop_down_platforms.tscn" id="2_dxvqq"]
 [ext_resource type="PackedScene" uid="uid://iaup13w1qtoh" path="res://scenes/tutorial/open_door.tscn" id="3_hehwb"]
 [ext_resource type="PackedScene" uid="uid://cae4poybmh3xw" path="res://scenes/tutorial/chest_example.tscn" id="4_fygni"]
+[ext_resource type="PackedScene" path="res://scenes/tutorial/example_encounter.tscn" id="5_lnjro"]
 
 [resource]
 script = ExtResource("1_cdi3s")
-list = Array[PackedScene]([ExtResource("1_aej5r"), ExtResource("2_dxvqq"), ExtResource("3_hehwb"), ExtResource("4_fygni")])
+list = Array[PackedScene]([ExtResource("1_aej5r"), ExtResource("2_dxvqq"), ExtResource("3_hehwb"), ExtResource("4_fygni"), ExtResource("5_lnjro")])
 metadata/_custom_type_script = "uid://cptgslr1mdx82"

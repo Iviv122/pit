@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="SimplePistol" load_steps=2 format=3 uid="uid://wv0khkhthxvv"]
+[gd_resource type="Resource" script_class="SimplePistol" load_steps=3 format=3 uid="uid://wv0khkhthxvv"]
 
 [ext_resource type="Script" uid="uid://b8loe2bk6jqfk" path="res://objects/items/weapons/simple_pistol.gd" id="1_r6yop"]
+[ext_resource type="PackedScene" uid="uid://dkwddcvqom574" path="res://assets/prefabs/simple_bullet.tscn" id="1_xh3f6"]
 
 [resource]
 script = ExtResource("1_r6yop")
+projectile = ExtResource("1_xh3f6")
 metadata/_custom_type_script = "uid://b8loe2bk6jqfk"
