@@ -21,7 +21,6 @@ LevelLoaderInstance="*res://globals/level_loader.tscn"
 
 [display]
 
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 

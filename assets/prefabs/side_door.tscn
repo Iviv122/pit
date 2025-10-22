@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlrn7vm36jcgb"]
+
+[ext_resource type="Script" uid="uid://6lki216r5lun" path="res://objects/level/activateable/side_door.gd" id="1_8tm2f"]
+[ext_resource type="Texture2D" uid="uid://ck24w456csm1q" path="res://raw_assets/sprites/drop_door.png" id="2_w0t2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwj4d"]
+size = Vector2(32, 128)
+
+[node name="SideDoor" type="Node2D"]
+script = ExtResource("1_8tm2f")
+metadata/_custom_type_script = "uid://6lki216r5lun"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+rotation = 1.5707964
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_w0t2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kwj4d")

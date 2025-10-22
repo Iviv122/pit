@@ -19,7 +19,7 @@ func load_scene() -> void:
 	for i in get_children():
 		i.queue_free()
 	
-	add_child(get_scene().instantiate())
+	add_child(get_scene().instantiate(),false)
 
 
 enum LevelType {
