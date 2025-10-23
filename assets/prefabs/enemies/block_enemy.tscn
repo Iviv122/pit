@@ -7,6 +7,7 @@
 size = Vector2(32, 32)
 
 [node name="Node2D" type="Area2D"]
+disable_mode = 1
 input_pickable = false
 script = ExtResource("1_yuye3")
 metadata/_custom_type_script = "uid://b7w8djchq0nim"

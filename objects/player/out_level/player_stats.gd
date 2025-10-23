@@ -11,6 +11,11 @@ func _process(delta):
     updated.emit()
     hunger -= delta
 
+func feed(a : float) -> void:
+    hunger += a
+    if hunger >= 100:
+        hunger = 100
+
 func deal_damage(amount : int) -> void:
     updated.emit()
     health -= amount
