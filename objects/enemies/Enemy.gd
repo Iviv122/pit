@@ -1,7 +1,10 @@
-extends CharacterBody2D 
+extends Area2D 
 class_name Enemy 
 
 @export var health : float = 5
+
+func _ready():
+	body_entered.connect(is_player)
 
 func damage(amount : float) -> void:
 	health -= amount
@@ -11,5 +14,10 @@ func damage(amount : float) -> void:
 func die() -> void:
 	queue_free()
 
-func damage_player(a : float) -> void:
-	pass
+func is_player(a : Node2D) -> void:
+	print("player", a)
+	if a is CharacterMovement:
+		damage_player()
+
+func damage_player() -> void:
+	PlayerStatsInstance.deal_damage(1)

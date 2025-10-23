@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf763"]
 size = Vector2(32, 32)
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Node2D" type="Area2D"]
+input_pickable = false
 script = ExtResource("1_yuye3")
 metadata/_custom_type_script = "uid://b7w8djchq0nim"
 

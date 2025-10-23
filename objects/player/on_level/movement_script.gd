@@ -13,9 +13,6 @@ var init_depth : float = StatRecorderInstance.depth
 func _ready():
 	init_pos = global_position
 
-func check_is_drop_down():
-	pass
-
 func drop():
 	position.y +=1
 
