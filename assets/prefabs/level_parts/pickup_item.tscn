@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbvx71a7yrvdc"]
+
+[ext_resource type="Script" uid="uid://clqurqkf8dv1q" path="res://objects/level/interactibles/item_lying.gd" id="1_85kwv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2uk2"]
+radius = 42.0
+
+[node name="PickupItem" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_85kwv")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://clqurqkf8dv1q"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n2uk2")

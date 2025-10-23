@@ -8,6 +8,10 @@ func _ready():
     pass
 
 
+func take_item(item : Item) -> void:
+    items.append(item)
+
+
 func take_weapon(weap : Weapon) -> void:
     if weapon == null:
         weapon = weap

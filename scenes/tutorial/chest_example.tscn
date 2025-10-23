@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cae4poybmh3xw"]
+[gd_scene load_steps=8 format=4 uid="uid://cae4poybmh3xw"]
 
 [ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="1_yquhb"]
 [ext_resource type="TileSet" uid="uid://byc7gm6ydy4fx" path="res://assets/tileset/basic_tileset.tres" id="2_67jxc"]
 [ext_resource type="Script" uid="uid://cj1q7fjqv02ba" path="res://objects/level/auto_translator.gd" id="3_ydmmd"]
+[ext_resource type="PackedScene" uid="uid://bbvx71a7yrvdc" path="res://assets/prefabs/level_parts/pickup_item.tscn" id="5_ydmmd"]
 [ext_resource type="PackedScene" uid="uid://dlrn7vm36jcgb" path="res://assets/prefabs/level_parts/side_door.tscn" id="5_yq23l"]
-[ext_resource type="PackedScene" uid="uid://syu18aj7w13r" path="res://assets/prefabs/level_parts/chest.tscn" id="6_yq23l"]
+[ext_resource type="Resource" uid="uid://wv0khkhthxvv" path="res://assets/weapons/pistol.tres" id="6_yq23l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq23l"]
 size = Vector2(354, 242)
@@ -37,6 +38,7 @@ position = Vector2(-64, 80)
 position = Vector2(64, 80)
 side = 1
 
-[node name="Chest" parent="." node_paths=PackedStringArray("on_open") instance=ExtResource("6_yq23l")]
-position = Vector2(0, -16)
-on_open = [NodePath("../SideDoor2"), NodePath("../SideDoor")]
+[node name="PickupItem" parent="." node_paths=PackedStringArray("activate_things") instance=ExtResource("5_ydmmd")]
+position = Vector2(0, -32)
+weapon = ExtResource("6_yq23l")
+activate_things = [NodePath("../SideDoor2"), NodePath("../SideDoor")]

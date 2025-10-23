@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvs202sep5rxg"]
+[gd_scene load_steps=2 format=3 uid="uid://b02t1hw72lcw7"]
 
 [ext_resource type="Script" uid="uid://badyte3l4v7v6" path="res://objects/player/out_level/inventory.gd" id="1_3xvkx"]
-[ext_resource type="Resource" uid="uid://wv0khkhthxvv" path="res://assets/weapons/pistol.tres" id="2_0ntxt"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_3xvkx")
-weapon = ExtResource("2_0ntxt")
 metadata/_custom_type_script = "uid://badyte3l4v7v6"
