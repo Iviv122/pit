@@ -26,3 +26,10 @@ metadata/_custom_type_script = "uid://cj1q7fjqv02ba"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoTranslator2"]
 position = Vector2(0, 212.285)
 shape = SubResource("RectangleShape2D_ne4uk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 249.0
+offset_top = -232.0
+offset_right = 289.0
+offset_bottom = -216.0
+text = "Use S to drop down"

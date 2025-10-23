@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://3v5t01lfrqhy"]
+[gd_scene load_steps=2 format=3 uid="uid://3v5t01lfrqhy"]
+
+[ext_resource type="Script" uid="uid://bwwywj2djqlp5" path="res://objects/ui/depth_meter.gd" id="1_ig7tw"]
 
 [node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 15.0
+offset_right = 16.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Hi"
+script = ExtResource("1_ig7tw")
+metadata/_custom_type_script = "uid://bwwywj2djqlp5"

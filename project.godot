@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelLoaderInstance="*res://globals/level_loader.tscn"
 PlayerInventoryInstance="*res://globals/player_inventory.tscn"
+StatRecorderInstance="*res://globals/stat_recorder_instance.tscn"
 
 [display]
 
@@ -29,6 +30,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://brm4l62t8tong"
 
 [input]
 

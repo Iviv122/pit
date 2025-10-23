@@ -29,6 +29,13 @@ metadata/_custom_type_script = "uid://cj1q7fjqv02ba"
 position = Vector2(0, 57)
 shape = SubResource("RectangleShape2D_3rhfi")
 
+[node name="Label" type="Label" parent="AutoTranslator"]
+offset_left = -774.0
+offset_top = -370.0
+offset_right = -454.0
+offset_bottom = -354.0
+text = "Use left mouse button to shoot"
+
 [node name="Node2D2" parent="." instance=ExtResource("4_h6pmg")]
 position = Vector2(208, -160)
 scale = Vector2(2, 2)

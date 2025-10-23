@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cknpev2hckyym"]
+
+[ext_resource type="Script" uid="uid://b02ys8ujg5bmk" path="res://objects/game_systems/stat_recorder.gd" id="1_wjl72"]
+
+[node name="StatRecorderInstance" type="Node"]
+script = ExtResource("1_wjl72")
+metadata/_custom_type_script = "uid://b02ys8ujg5bmk"

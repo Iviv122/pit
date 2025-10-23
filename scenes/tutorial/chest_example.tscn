@@ -38,6 +38,13 @@ position = Vector2(-64, 80)
 position = Vector2(64, 80)
 side = 1
 
+[node name="Label" type="Label" parent="."]
+offset_left = -136.0
+offset_top = -152.0
+offset_right = 184.0
+offset_bottom = -136.0
+text = "Use E to pick up gun"
+
 [node name="PickupItem" parent="." node_paths=PackedStringArray("activate_things") instance=ExtResource("5_ydmmd")]
 position = Vector2(0, -32)
 weapon = ExtResource("6_yq23l")

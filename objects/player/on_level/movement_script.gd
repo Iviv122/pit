@@ -7,6 +7,12 @@ class_name CharacterMovement
 
 var is_grounded : bool = false
 
+var init_pos : Vector2
+var init_depth : float = StatRecorderInstance.depth
+
+func _ready():
+	init_pos = global_position
+
 func check_is_drop_down():
 	pass
 
@@ -51,4 +57,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	StatRecorderInstance.set_depth(init_depth - (init_pos-global_position).y/50)
+
 	move_and_slide()
+
