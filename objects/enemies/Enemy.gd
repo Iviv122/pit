@@ -10,3 +10,6 @@ func damage(amount : float) -> void:
 
 func die() -> void:
 	queue_free()
+
+func damage_player(a : float) -> void:
+	pass
