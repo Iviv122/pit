@@ -20,10 +20,10 @@ config/icon="res://icon.svg"
 LevelLoaderInstance="*res://globals/level_loader.tscn"
 PlayerInventoryInstance="*res://globals/player_inventory.tscn"
 StatRecorderInstance="*res://globals/stat_recorder_instance.tscn"
+PlayerStatsInstance="*res://globals/player_stats.tscn"
 
 [display]
 
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 

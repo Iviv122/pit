@@ -60,4 +60,3 @@ func _physics_process(delta: float) -> void:
 	StatRecorderInstance.set_depth(init_depth - (init_pos-global_position).y/50)
 
 	move_and_slide()
-
