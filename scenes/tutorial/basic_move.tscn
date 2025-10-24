@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dd42gyp450no7"]
+[gd_scene load_steps=5 format=4 uid="uid://dd42gyp450no7"]
 
 [ext_resource type="TileSet" uid="uid://byc7gm6ydy4fx" path="res://assets/tileset/basic_tileset.tres" id="1_4vyl7"]
 [ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="1_y5367"]
 [ext_resource type="Script" uid="uid://cj1q7fjqv02ba" path="res://objects/level/auto_translator.gd" id="3_sn52y"]
-[ext_resource type="PackedScene" uid="uid://dy2ig2otsgn24" path="res://assets/prefabs/level_parts/jump_pad.tscn" id="4_kbjr0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn52y"]
 size = Vector2(354, 242)
@@ -47,6 +46,3 @@ pivot_offset = Vector2(136, 8)
 text = "Use space to jump"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="JumpPad" parent="." instance=ExtResource("4_kbjr0")]
-position = Vector2(45, -18)

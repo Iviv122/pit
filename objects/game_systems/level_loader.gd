@@ -5,6 +5,9 @@ class_name LevelLoader
 @export var level_list: LevelList
 
 func _ready():
+	if get_tree().current_scene is MapEditor:
+		return
+
 	load_scene()
 
 func get_scene() -> PackedScene:

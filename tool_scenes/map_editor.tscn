@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://da17qhuwf48q"]
+
+[ext_resource type="Script" uid="uid://dwh0l6efftqye" path="res://objects/tools/map_editor/map_editor.gd" id="1_v1lie"]
+[ext_resource type="PackedScene" uid="uid://cv3vdh0hnyhuc" path="res://objects/tools/map_editor/level_template.tscn" id="2_0xtaq"]
+
+[node name="MapEditor" type="Node2D" node_paths=PackedStringArray("scene_layer", "level")]
+script = ExtResource("1_v1lie")
+scene_layer = NodePath("LevelTemplate/TileMapLayer")
+level = NodePath("LevelTemplate")
+metadata/_custom_type_script = "uid://dwh0l6efftqye"
+
+[node name="LevelTemplate" parent="." instance=ExtResource("2_0xtaq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[editable path="LevelTemplate"]
