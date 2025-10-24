@@ -3,8 +3,13 @@ class_name Enemy
 
 @export var health : float = 5
 
+
 func _ready():
 	body_entered.connect(is_player)
+	on_spawn()
+
+func on_spawn() -> void:
+	pass
 
 func damage(amount : float) -> void:
 	health -= amount
