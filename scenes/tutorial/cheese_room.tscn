@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://b286k0jkn6uhg"]
+[gd_scene load_steps=8 format=4 uid="uid://b286k0jkn6uhg"]
 
 [ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="1_ca7xi"]
 [ext_resource type="TileSet" uid="uid://byc7gm6ydy4fx" path="res://assets/tileset/basic_tileset.tres" id="2_uvvs4"]
 [ext_resource type="Script" uid="uid://cj1q7fjqv02ba" path="res://objects/level/auto_translator.gd" id="3_fb2xx"]
 [ext_resource type="PackedScene" uid="uid://dlrn7vm36jcgb" path="res://assets/prefabs/level_parts/side_door.tscn" id="4_ca7xi"]
 [ext_resource type="PackedScene" uid="uid://c4s5pidcj8hfv" path="res://assets/prefabs/level_parts/pickup_food.tscn" id="5_ca7xi"]
+[ext_resource type="PackedScene" uid="uid://dh42aakwa0w8s" path="res://assets/prefabs/level_parts/drop_door.tscn" id="6_uvvs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvpit"]
 size = Vector2(354, 242)
@@ -45,4 +46,7 @@ text = "Eat cheese to survive"
 
 [node name="PickupItem" parent="." node_paths=PackedStringArray("activate_things") instance=ExtResource("5_ca7xi")]
 position = Vector2(192, -184)
-activate_things = [NodePath("../AutoTranslator2/SideDoor2"), NodePath("../AutoTranslator2/SideDoor")]
+activate_things = [NodePath("../AutoTranslator2/SideDoor2"), NodePath("../AutoTranslator2/SideDoor"), NodePath("../DropDoor")]
+
+[node name="DropDoor" parent="." instance=ExtResource("6_uvvs4")]
+position = Vector2(272, -224)

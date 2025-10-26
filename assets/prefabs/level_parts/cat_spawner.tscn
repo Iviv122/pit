@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbfybyo5oa84g"]
+
+[ext_resource type="Texture2D" uid="uid://d1d2yfdxr8mm5" path="res://raw_assets/sprites/spawn.png" id="1_xtaei"]
+[ext_resource type="Script" uid="uid://txofcl1lnkn2" path="res://objects/level/enviroment/cat_spawner.gd" id="2_t13qf"]
+[ext_resource type="PackedScene" uid="uid://uxktaenjkhxl" path="res://assets/prefabs/enemies/round_cat_enemy.tscn" id="3_xtaei"]
+
+[node name="PlayerSpawner" type="Sprite2D"]
+texture = ExtResource("1_xtaei")
+script = ExtResource("2_t13qf")
+cat_prefab = ExtResource("3_xtaei")

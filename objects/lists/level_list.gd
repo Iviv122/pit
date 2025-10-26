@@ -15,7 +15,6 @@ func _init():
         if !list.has(loaded):
             list.append(loaded)
 
-
 func shuffle() -> void:
     queue.clear()
     for i in list:
@@ -24,9 +23,6 @@ func shuffle() -> void:
 
 func get_level() -> PackedScene:
     
-    for i in list:
-        print(i.resource_path.get_basename())
-
     if queue.size() == 0:
         shuffle()
     
