@@ -48,7 +48,7 @@ var prefab_queue : Array[Node2D]
 func place() -> void:
 	if prefab_to_place:
 		var item : Node2D = prefab_to_place.instantiate() 
-		item.global_position = scene_layer.local_to_map(get_global_mouse_position())*32
+		item.global_position = scene_layer.map_to_local(scene_layer.local_to_map(get_global_mouse_position()))
 		level.add_child(item)
 		prefab_queue.append(item)
 

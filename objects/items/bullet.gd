@@ -12,7 +12,7 @@ func _ready():
     area_entered.connect(on_collide)
 
 func on_collide(_a : Node2D):
-    if _a is Bullet:
+    if _a is Bullet || _a is EnemyProjectile:
         return
     if _a is CharacterMovement:
         return

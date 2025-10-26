@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqns75fcajbbq"]
+
+[ext_resource type="Script" uid="uid://t6jvbgsu3fqb" path="res://objects/level/enviroment/cross_shooter.gd" id="1_1budt"]
+[ext_resource type="Texture2D" uid="uid://bhjykda43opl2" path="res://raw_assets/sprites/cross_shooter.png" id="2_1budt"]
+[ext_resource type="PackedScene" uid="uid://cwmeghxgnhya8" path="res://assets/prefabs/enemy_bullet.tscn" id="2_3qrmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ralgi"]
+size = Vector2(32, 32)
+
+[node name="CrossShooter" type="StaticBody2D"]
+script = ExtResource("1_1budt")
+projectile = ExtResource("2_3qrmn")
+metadata/_custom_type_script = "uid://t6jvbgsu3fqb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ralgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1budt")
