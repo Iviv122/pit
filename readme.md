@@ -1,3 +1,7 @@
+remove last prefab in queue : z 
+
+place prefab : space
+
 draw tile rectangular : left mouse button
 
 remove single tile : right mouse button
