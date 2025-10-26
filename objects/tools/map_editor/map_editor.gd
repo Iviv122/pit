@@ -56,7 +56,7 @@ func back() -> void:
 	if !prefab_queue.is_empty():
 		prefab_queue.pop_back().queue_free()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		start_dragging()
 	elif Input.is_action_just_released("shoot"):
