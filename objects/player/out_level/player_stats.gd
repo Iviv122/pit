@@ -17,10 +17,12 @@ func feed(a : float) -> void:
         hunger = 100
 
 func deal_damage(amount : int) -> void:
-    updated.emit()
     health -= amount
+    if health >= 3:
+        health = 3
     if health <=0:
         die()
+    updated.emit()
 
 func die() -> void:
     died.emit()

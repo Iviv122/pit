@@ -10,7 +10,8 @@ func act() -> void:
 	for i in activate_things:
 		i.act()
 	PlayerStatsInstance.feed(feed)
-	
+	PlayerStatsInstance.deal_damage(-1)
+
 	queue_free()
 
 func _process(delta):

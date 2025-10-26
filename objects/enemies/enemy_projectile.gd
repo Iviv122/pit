@@ -7,6 +7,10 @@ var speed : float
 ## ??????????
 var damage : float 
 
+func _input(event):
+	if event.is_action_pressed('esc'):
+		queue_free()
+
 func _ready():
 	body_entered.connect(on_collide)
 	area_entered.connect(on_collide)
