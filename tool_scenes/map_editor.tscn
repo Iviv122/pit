@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://da17qhuwf48q"]
+[gd_scene load_steps=14 format=3 uid="uid://da17qhuwf48q"]
 
 [ext_resource type="Script" uid="uid://dwh0l6efftqye" path="res://objects/tools/map_editor/map_editor.gd" id="1_v1lie"]
 [ext_resource type="PackedScene" uid="uid://cv3vdh0hnyhuc" path="res://objects/tools/map_editor/level_template.tscn" id="2_0xtaq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dlrn7vm36jcgb" path="res://assets/prefabs/level_parts/side_door.tscn" id="10_f4gcj"]
 [ext_resource type="PackedScene" uid="uid://bn77ckv7gu3yh" path="res://assets/prefabs/enemies/block_enemy.tscn" id="11_7q73q"]
 [ext_resource type="PackedScene" uid="uid://uxktaenjkhxl" path="res://assets/prefabs/enemies/round_cat_enemy.tscn" id="12_nx507"]
+[ext_resource type="PackedScene" uid="uid://dnlfxuxyknnpo" path="res://assets/prefabs/level_parts/player_spawner.tscn" id="13_4l22n"]
 
 [node name="MapEditor" type="Node2D" node_paths=PackedStringArray("scene_layer", "level")]
 script = ExtResource("1_v1lie")
@@ -35,7 +36,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("3_6c20o")
-list = Array[PackedScene]([ExtResource("4_w0ki4"), ExtResource("5_4l22n"), ExtResource("6_c3v15"), ExtResource("4_tf4uy"), ExtResource("8_xjwn8"), ExtResource("9_cn5mw"), ExtResource("10_f4gcj"), ExtResource("11_7q73q"), ExtResource("12_nx507")])
+list = Array[PackedScene]([ExtResource("4_w0ki4"), ExtResource("5_4l22n"), ExtResource("6_c3v15"), ExtResource("4_tf4uy"), ExtResource("8_xjwn8"), ExtResource("9_cn5mw"), ExtResource("10_f4gcj"), ExtResource("11_7q73q"), ExtResource("12_nx507"), ExtResource("13_4l22n")])
 map_edit = NodePath("../../..")
 metadata/_custom_type_script = "uid://hy2dbw767jcy"
 

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnlfxuxyknnpo"]
+
+[ext_resource type="Texture2D" uid="uid://d1d2yfdxr8mm5" path="res://raw_assets/sprites/spawn.png" id="1_0waxy"]
+[ext_resource type="Script" uid="uid://bqmxyhnuj6w8j" path="res://objects/level/enviroment/player_spawn.gd" id="1_uycp4"]
+[ext_resource type="PackedScene" uid="uid://cbsalkvq1wpwn" path="res://assets/prefabs/player_body.tscn" id="2_0waxy"]
+
+[node name="PlayerSpawner" type="Sprite2D"]
+texture = ExtResource("1_0waxy")
+script = ExtResource("1_uycp4")
+player_prefab = ExtResource("2_0waxy")
+metadata/_custom_type_script = "uid://bqmxyhnuj6w8j"

@@ -22,7 +22,7 @@ func load_scene() -> void:
 	for i in get_children():
 		i.queue_free()
 	
-	add_child(get_scene().instantiate(),false)
+	add_child.call_deferred(get_scene().instantiate(),false)
 
 
 enum LevelType {
