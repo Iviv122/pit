@@ -14,13 +14,17 @@ var id = 1
 
 func save() -> void:
 	var scene = PackedScene.new()
+	
+	level.propagate_call('set_owner',[level])
 	scene.pack(level)
-	ResourceSaver.save(scene, 'res://scenes/' + str(DirAccess.open('res://scenes').get_files().size()) + ".tscn")
-	get_tree().quit()
+	
+	var dir = DirAccess.open('res://scenes/num_levels/')
+	var num = dir.get_files().size()+1 
+
+	ResourceSaver.save(scene, 'res://scenes/num_levels/' + str(num) + ".tscn")
 
 var start: Vector2
 var finish: Vector2
-
 
 func start_dragging() -> void:
 	print("start")
@@ -39,11 +43,29 @@ func stop_dragging() -> void:
 		for y in range(start_y, end_y):
 			SetTile(Vector2(x, y), 0, id)
 
-func _input(event):
+var prefab_to_place : PackedScene 
+var prefab_queue : Array[Node2D]
+func place() -> void:
+	if prefab_to_place:
+		var item : Node2D = prefab_to_place.instantiate() 
+		item.global_position = scene_layer.local_to_map(get_global_mouse_position())*32
+		level.add_child(item)
+		prefab_queue.append(item)
+
+func back() -> void:
+	if !prefab_queue.is_empty():
+		prefab_queue.pop_back().queue_free()
+
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		start_dragging()
 	elif Input.is_action_just_released("shoot"):
 		stop_dragging()
+	if Input.is_action_just_pressed("z"):
+		back()
+	if Input.is_action_just_pressed('jump'):
+		place()
+
 	if (Input.is_action_pressed('cancel')):
 		SetTileAtMouse(0, 0, Vector2(-1, -1))
 	if (Input.is_action_just_pressed('down')):
@@ -56,8 +78,7 @@ func _input(event):
 	if Input.is_action_just_pressed("esc"):
 		save()
 
-func SetTile(pos: Vector2, Layer: int = 0, ID: int = 0, Type: Vector2 = Vector2(0, 0)):
+func SetTile(pos: Vector2, _Layer: int = 0, ID: int = 0, Type: Vector2 = Vector2(0, 0)):
 	scene_layer.set_cell(scene_layer.local_to_map(pos), ID, Type)
-
-func SetTileAtMouse(Layer: int = 0, ID: int = 0, Type: Vector2 = Vector2(0, 0)):
+func SetTileAtMouse(_Layer: int = 0, ID: int = 0, Type: Vector2 = Vector2(0, 0)):
 	scene_layer.set_cell(scene_layer.local_to_map(get_global_mouse_position()), ID, Type)

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://da17qhuwf48q"]
+[gd_scene load_steps=13 format=3 uid="uid://da17qhuwf48q"]
 
 [ext_resource type="Script" uid="uid://dwh0l6efftqye" path="res://objects/tools/map_editor/map_editor.gd" id="1_v1lie"]
 [ext_resource type="PackedScene" uid="uid://cv3vdh0hnyhuc" path="res://objects/tools/map_editor/level_template.tscn" id="2_0xtaq"]
+[ext_resource type="Script" uid="uid://hy2dbw767jcy" path="res://objects/tools/map_editor/prefab_palette.gd" id="3_6c20o"]
+[ext_resource type="PackedScene" uid="uid://dy2ig2otsgn24" path="res://assets/prefabs/level_parts/jump_pad.tscn" id="4_tf4uy"]
+[ext_resource type="PackedScene" uid="uid://gkvna87eg30r" path="res://assets/prefabs/level_parts/active_button.tscn" id="4_w0ki4"]
+[ext_resource type="PackedScene" uid="uid://syu18aj7w13r" path="res://assets/prefabs/level_parts/chest.tscn" id="5_4l22n"]
+[ext_resource type="PackedScene" uid="uid://dh42aakwa0w8s" path="res://assets/prefabs/level_parts/drop_door.tscn" id="6_c3v15"]
+[ext_resource type="PackedScene" uid="uid://c4s5pidcj8hfv" path="res://assets/prefabs/level_parts/pickup_food.tscn" id="8_xjwn8"]
+[ext_resource type="PackedScene" uid="uid://bbvx71a7yrvdc" path="res://assets/prefabs/level_parts/pickup_item.tscn" id="9_cn5mw"]
+[ext_resource type="PackedScene" uid="uid://dlrn7vm36jcgb" path="res://assets/prefabs/level_parts/side_door.tscn" id="10_f4gcj"]
+[ext_resource type="PackedScene" uid="uid://bn77ckv7gu3yh" path="res://assets/prefabs/enemies/block_enemy.tscn" id="11_7q73q"]
+[ext_resource type="PackedScene" uid="uid://uxktaenjkhxl" path="res://assets/prefabs/enemies/round_cat_enemy.tscn" id="12_nx507"]
 
 [node name="MapEditor" type="Node2D" node_paths=PackedStringArray("scene_layer", "level")]
 script = ExtResource("1_v1lie")
@@ -12,5 +22,21 @@ metadata/_custom_type_script = "uid://dwh0l6efftqye"
 [node name="LevelTemplate" parent="." instance=ExtResource("2_0xtaq")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 240.0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="PrefabPalette2" type="VBoxContainer" parent="CanvasLayer/ScrollContainer" node_paths=PackedStringArray("map_edit")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_6c20o")
+list = Array[PackedScene]([ExtResource("4_w0ki4"), ExtResource("5_4l22n"), ExtResource("6_c3v15"), ExtResource("4_tf4uy"), ExtResource("8_xjwn8"), ExtResource("9_cn5mw"), ExtResource("10_f4gcj"), ExtResource("11_7q73q"), ExtResource("12_nx507")])
+map_edit = NodePath("../../..")
+metadata/_custom_type_script = "uid://hy2dbw767jcy"
 
 [editable path="LevelTemplate"]
