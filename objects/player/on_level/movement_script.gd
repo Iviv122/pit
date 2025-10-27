@@ -10,7 +10,17 @@ var is_grounded : bool = false
 var init_pos : Vector2
 var init_depth : float = StatRecorderInstance.depth
 
+var alive = true 
+
+func restart() -> void:
+	StatRecorderInstance.set_depth(0)
+
+func die() -> void:
+	alive = false
+	queue_free()	
+
 func _ready():
+	PlayerStatsInstance.died.connect(die)
 	init_pos = global_position
 
 func drop():
@@ -54,6 +64,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	StatRecorderInstance.set_depth(init_depth - (init_pos-global_position).y/50)
+	if alive:
+		StatRecorderInstance.set_depth(init_depth - (init_pos-global_position).y/50)
 
 	move_and_slide()

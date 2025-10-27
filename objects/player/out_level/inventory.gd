@@ -5,8 +5,11 @@ class_name Inventory
 @export var weapon : Weapon 
 
 func _ready():
-    pass
+    add_to_group("restart")
 
+func restart() -> void:
+    weapon = null
+    items.clear()
 
 func take_item(item : Item) -> void:
     items.append(item)

@@ -7,6 +7,13 @@ signal died()
 var hunger : float  = 100
 var health : int  = 3
 
+func _ready():
+    add_to_group("restart")
+
+func restart() -> void:
+    hunger = 100
+    health = 3
+
 func _process(delta):
     updated.emit()
     feed(-delta)

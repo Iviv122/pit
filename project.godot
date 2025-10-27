@@ -35,6 +35,10 @@ export/convert_text_resources_to_binary=false
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+restart="restart"
+
 [gui]
 
 theme/custom_font="uid://brm4l62t8tong"
