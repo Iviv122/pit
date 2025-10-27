@@ -22,7 +22,7 @@ shoot : left mouse button
 
 interact/eat : e
 
-# To use it, open it in tool_scenes folder. Editor controll
+# Editor controll.  To use it, open it in tool_scenes folder.
 remove last prefab in queue : z 
 
 place prefab : space
